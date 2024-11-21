@@ -20,7 +20,7 @@ export default function OrderDonePage() {
     }
 
     return (
-        <div className="relative flex flex-col justify-between h-screen max-w-md mx-auto bg-white border border-gray-300 rounded-lg overflow-hidden">
+        <div className="relative flex flex-col justify-between h-screen max-w-md bg-white border border-gray-300 rounded-lg overflow-hidden">
             {/* Header */}
             <header className="bg-white shadow p-4">
                 <h1 className="text-lg font-bold text-black">Go Serve</h1>
@@ -73,7 +73,7 @@ export default function OrderDonePage() {
                         <FaArrowRight />
                     </span>
                 </button>
-                <button className="bg-[#4CB050] text-white h-16 shadow flex justify-center w-4/5 items-center">
+                <button className="bg-[#4CB050] text-white h-16 shadow flex justify-center w-4/5 items-center" onClick={() => router.push("/agents/dashboard")}>
                     <span className="text-2xl font-bold" onClick={() => router.push('/agents/dashboard')}>SELESAI</span>
                 </button>
             </footer>

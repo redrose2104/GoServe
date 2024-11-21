@@ -12,18 +12,26 @@ export default function Dashboard() {
     const router = useRouter()
 
     useEffect(() => {
-        getListMission();
+        if(localStorage.getItem("account")){
+            getListMission();
 
-        const interval = setInterval(() => {
-            if (data === 0) {
-                getListMission();
-            } else {
-                router.push("/agents/get-order")
-            }
-        }, 5000);
+            const interval = setInterval(() => {
+                if (data === 0) {
+                    getListMission();
+                } else {
+                    router.push("/agents/get-order")
+                }
+            }, 5000);
 
-        return () => clearInterval(interval);
-    }, [data]);
+            return () => clearInterval(interval);
+        }
+    });
+
+    useEffect(() => {
+        if(localStorage.getItem("account")){
+            setColor("bg-green-400")
+        }
+    }, []);
 
     const getListMission = async () => {
         const res = await fetch("https://48b4-36-66-71-34.ngrok-free.app/v1/testing/list/mission"); // Replace with your API URL
@@ -34,20 +42,22 @@ export default function Dashboard() {
 
     const onClickPower = () => {
         if (color == 'bg-black'){
+            localStorage.setItem("account", "active")
             setColor('bg-green-400')
         } else{
+            localStorage.removeItem("account")
             setColor('bg-black')
         }
         console.log('coolr', color)
     }
 
     return (
-        <div className="relative flex flex-col justify-between h-screen max-w-md mx-auto bg-white border border-gray-300 rounded-lg overflow-hidden">
+        <div className="relative flex flex-col justify-between h-screen max-w-md bg-white border border-gray-300 rounded-lg overflow-hidden">
             {/* Header */}
             <div className="flex items-center justify-between p-4 shadow-md relative">
                 <div className="flex items-center">
                     <div className="w-10 h-10 bg-black rounded-full flex justify-center items-center">
-                        <FaUser className="text-xs w-6 h-6"/>
+                        <FaUser className="text-xs w-6 h-6 text-white"/>
                     </div>
                 </div>
                 {color == "bg-black" &&

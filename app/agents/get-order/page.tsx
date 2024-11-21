@@ -36,7 +36,7 @@ export default function OrderPage() {
     }
 
     return (
-        <div className="relative flex flex-col justify-between h-screen max-w-md mx-auto bg-white border border-gray-300 rounded-lg overflow-hidden">
+        <div className="relative flex flex-col justify-between h-screen max-w-md bg-white border border-gray-300 rounded-lg overflow-hidden">
             {/* Header */}
             <header className="bg-white shadow p-4">
                 <h1 className="text-lg font-bold text-black">Go Serve</h1>

@@ -32,7 +32,7 @@ export default function OrderPage() {
     }
 
     return (
-        <div className="relative flex flex-col justify-between h-screen max-w-md mx-auto bg-white border border-gray-300 rounded-lg overflow-hidden">
+        <div className="relative flex flex-col justify-between h-screen max-w-md bg-white border border-gray-300 rounded-lg overflow-hidden">
             <div className="flex-grow">
                 <MapContainer
                     center={[-6.2675, 106.8076]}
@@ -65,7 +65,7 @@ export default function OrderPage() {
                     </div>
                     <div className={'w-3/4'}>
                         <h2 className="text-lg font-bold">Dipesan oleh</h2>
-                        <p className="text-gray-800 text-xl">Abdurrahmanthoyyib</p>
+                        <p className="text-gray-800 text-xl">{data?.user_name}</p>
                         <p className="text-gray-500 text-sm">4.5 ★ (498)</p>
                     </div>
                     <FaRegMessage className={'text-3xl w-10'} />

@@ -6,7 +6,7 @@ export default function Login() {
     const router = useRouter();
 
     return (
-        <div className="flex flex-col justify-between h-screen max-w-md mx-auto bg-white border border-gray-300 rounded-lg overflow-hidden">
+        <div className="flex flex-col justify-between h-screen max-w-md bg-white border border-gray-300 rounded-lg overflow-hidden">
             {/* Header */}
             <div className="flex items-center justify-between p-4 bg-white border-b border-gray-200">
                 <img
