@@ -2,10 +2,12 @@
 
 import {Button} from "antd";
 import {useState} from "react";
+import {useRouter} from "next/navigation";
 
 export default function ChooseType(){
 
     const [currentType, setCurrentType] = useState(0);
+    const router = useRouter();
 
     const typeOrder = [
         {
@@ -26,11 +28,11 @@ export default function ChooseType(){
         <div className={"flex flex-col justify-center"}>
             {typeOrder.filter((type) => type.name === currentType).map((curType) => {
                 console.log("curType", curType.typeList);
-                return ( // Add a return here to ensure the JSX is returned
+                return (
                     (curType.typeList || []).map((lowestText) => {
                         console.log("lowestText", lowestText);
                         return (
-                            <Button className={"w-full text-white mt-3"} style={{backgroundColor: "#00880C"}} onClick={() => setCurrentType(currentType + 1)}>
+                            <Button className={"w-full text-white mt-3"} style={{backgroundColor: "#00880C"}} onClick={() => (currentType === 2 || lowestText == "Lainnya") ? router.push("requestMission") : setCurrentType(currentType + 1)}>
                                 {lowestText}
                             </Button>
                         );

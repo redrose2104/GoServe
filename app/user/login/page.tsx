@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function LoginPage(){
     return (
-        <div className={"p-5 mt-20"}>
+        <div className={"p-5 mt-20 mx-2 bg-white"}>
             <div className={"flex flex-col"}>
                 <p className={"font-bold text-2xl"}>Selamat Datang di Gojek!</p>
                 <p>Masuk atau daftar hanya dalam beberapa langkah mudah</p>

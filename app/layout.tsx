@@ -28,9 +28,10 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased text-black h-screen`}
+        style={{backgroundColor: "white"}}
       >
       <div className={"flex flex-col justify-center items-center h-screen"}>
-          <div className={"flex flex-col bg-white h-5/6"} style={{ width: 390 }}>
+          <div className={"flex flex-col bg-white h-5/6"} style={{ width: 390, backgroundColor: "#F1F2F4" }}>
             {children}
           </div>
       </div>
