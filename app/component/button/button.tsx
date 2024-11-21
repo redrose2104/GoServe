@@ -1,7 +1,7 @@
 import {Button} from "antd";
 
 export const PositiveButton = ({ text }) => {
-    return <Button className={"w-100 text-white"} style={{ backgroundColor: "#00880C" }}>
+    return <Button className={"w-full text-white"} style={{ backgroundColor: "#00880C" }}>
         {text}
     </Button>
 }
