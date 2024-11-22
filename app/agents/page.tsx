@@ -32,7 +32,7 @@ export default function Login() {
                     Hi, Agent Partner! Ready to Work?
                 </h1>
                 <p className="text-sm text-gray-600 mb-6">
-                    Let's login to start receiving bids!
+                    Let&apos;s login to start receiving bids!
                 </p>
             </div>
 

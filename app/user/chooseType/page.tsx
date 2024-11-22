@@ -27,12 +27,10 @@ export default function ChooseType(){
     return <div className={"p-10 h-screen content-center"}>
         <div className={"flex flex-col justify-center"}>
             {typeOrder.filter((type) => type.name === currentType).map((curType) => {
-                console.log("curType", curType.typeList);
                 return (
-                    (curType.typeList || []).map((lowestText) => {
-                        console.log("lowestText", lowestText);
+                    (curType.typeList || []).map((lowestText, index) => {
                         return (
-                            <Button className={"w-full text-white mt-3"} style={{backgroundColor: "#00880C"}} onClick={() => (currentType === 2 || lowestText == "Lainnya") ? router.push("requestMission") : setCurrentType(currentType + 1)}>
+                            <Button key={`button-${index}`}  className={"w-full text-white mt-3"} style={{backgroundColor: "#00880C"}} onClick={() => (currentType === 2 || lowestText == "Lainnya") ? router.push("requestMission") : setCurrentType(currentType + 1)}>
                                 {lowestText}
                             </Button>
                         );

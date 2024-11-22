@@ -9,7 +9,7 @@ type IFormInput = {
     price: number
 }
 
-export default function requestMission(){
+export default function RequestMission(){
 
     const router = useRouter();
     const { register, handleSubmit } = useForm<IFormInput>()
@@ -32,7 +32,7 @@ export default function requestMission(){
         };
         fetch('https://48b4-36-66-71-34.ngrok-free.app/v1/testing/create/mission', requestOptions)
             .then(response => response.json())
-            .then(data => {
+            .then(() => {
                 router.push("ongoingOrder")
             });
     }

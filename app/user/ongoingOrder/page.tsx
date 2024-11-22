@@ -1,6 +1,6 @@
 'use client'
 import {Button, Input} from "antd";
-import {ArrowLeftOutlined, ArrowRightOutlined, StarOutlined, StarTwoTone} from "@ant-design/icons";
+import {ArrowLeftOutlined, ArrowRightOutlined, StarOutlined } from "@ant-design/icons";
 import {useEffect, useState} from "react";
 import {MapContainer, Marker, Polyline, TileLayer} from "react-leaflet";
 import {useRouter} from "next/navigation";

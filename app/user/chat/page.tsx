@@ -42,16 +42,16 @@ export default function Chat() {
 
             {/* Chat Messages */}
             <div className="flex-grow overflow-y-auto p-4">
-                {arrayChat.map((chat) => (
+                {arrayChat.map((chat, index) => (
                     chat.isSender ? (
-                        <div className="flex justify-end mb-2">
+                        <div key={`chat-sender-${index}`} className="flex justify-end mb-2">
                             <div className="bg-green-500 text-white p-3 rounded-lg max-w-xs">
                                 {chat.content}
                             </div>
                             <span className="text-gray-500 text-sm self-end ml-2">{chat.time}</span>
                         </div>
                         ) : (
-                        <div className="flex mb-2">
+                        <div key={`chat-receiver-${index}`} className="flex mb-2">
                             <div className="bg-gray-200 text-gray-900 p-3 rounded-lg max-w-xs">
                                 {chat.content}
                             </div>
