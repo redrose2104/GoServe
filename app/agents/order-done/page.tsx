@@ -3,9 +3,18 @@ import {useEffect, useState} from "react";
 import {FaArrowRight} from "react-icons/fa";
 import {useRouter} from "next/navigation";
 
+interface Data {
+    user_name: string;
+    type_mission: string;
+    description: string;
+    location: string;
+    id: string;
+    price: number;
+}
+
 export default function OrderDonePage() {
 
-    const [data, setData] = useState({});
+    const [data, setData] = useState<Data | null>(null);
     const router = useRouter();
 
     useEffect(() => {

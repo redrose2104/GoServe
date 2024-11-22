@@ -15,9 +15,17 @@ L.Icon.Default.mergeOptions({
     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
 });
 
+interface Data {
+    user_name: string;
+    type_mission: string;
+    description: string;
+    location: string;
+    id: string;
+}
+
 export default function OrderPage() {
 
-    const [data, setData] = useState({});
+    const [data, setData] = useState<Data | null>(null);
     useEffect(() => {
         getListMission()
     }, []);
