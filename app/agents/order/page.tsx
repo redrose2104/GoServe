@@ -7,7 +7,7 @@ import {FaRegMessage} from "react-icons/fa6";
 import {useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
 
-// Fix for default Leaflet icons not appearing
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
     iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
@@ -24,13 +24,12 @@ interface Data {
 }
 
 export default function OrderPage() {
-
     const [data, setData] = useState<Data | null>(null);
-    useEffect(() => {
-        getListMission()
-    }, []);
-
     const router = useRouter();
+
+    useEffect(() => {
+        getListMission();
+    }, []);
 
     const getListMission = async () => {
         const res = await fetch("https://48b4-36-66-71-34.ngrok-free.app/v1/testing/list/mission"); // Replace with your API URL
@@ -42,19 +41,14 @@ export default function OrderPage() {
     return (
         <div className="relative flex flex-col justify-between h-screen max-w-md bg-white border border-gray-300 rounded-lg overflow-hidden">
             <div className="flex-grow">
-                <MapContainer
-                    center={[-6.2675, 106.8076]}
-                    zoom={18}
-                    className="w-full h-full"
-                >
+                {/* Map will be rendered only on the client side */}
+                <MapContainer center={[-6.2675, 106.8076]} zoom={18} className="w-full h-full">
                     <TileLayer
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     />
-                    {/* Markers */}
                     <Marker position={[-6.2675, 106.8076]} />
                     <Marker position={[-6.2685, 106.812]} />
-                    {/* Polyline for route */}
                     <Polyline
                         positions={[
                             [-6.2675, 106.8076],
@@ -79,13 +73,12 @@ export default function OrderPage() {
                     <FaRegMessage className={'text-3xl w-10'} />
                 </div>
 
-
                 <div className="mt-4 p-4">
                     <h3 className="font-semibold text-lg mb-5">
                         <span className="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-lg font-medium capitalize">
-                      {data?.type_mission}
-                    </span> <span className={'text-black opacity-65 text-lg '}>
-                        - {data?.description} </span>
+                            {data?.type_mission}
+                        </span> <span className={'text-black opacity-65 text-lg'}>
+                            - {data?.description} </span>
                     </h3>
                     <p className="text-gray-600 text-sm">
                         {data?.location}
@@ -94,9 +87,9 @@ export default function OrderPage() {
             </div>
 
             {/* Button */}
-            <div >
+            <div>
                 <button className="h-20 text-2xl bg-[#1F87E6] text-white w-full font-semibold shadow-md flex items-center justify-between">
-                    <div className={'w-20 flex items-center justify-center bg-[#1665C1] h-full '}>< FaArrowRight className={'w-6'} /></div>
+                    <div className={'w-20 flex items-center justify-center bg-[#1665C1] h-full '}><FaArrowRight className={'w-6'} /></div>
                     <div className={'w-full flex items-center ml-4 text-left h-full'} onClick={() => router.push('/agents/order-done')}>Udah sama customer</div>
                 </button>
             </div>
