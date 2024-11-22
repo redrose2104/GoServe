@@ -5,11 +5,18 @@ import {useEffect, useState} from "react";
 import {MapContainer, Marker, Polyline, TileLayer} from "react-leaflet";
 import {useRouter} from "next/navigation";
 
+interface Data {
+    user_name: string;
+    description: string;
+    location: string;
+    rating: string;
+}
+
 export default function OngoingOrder(){
 
     const router = useRouter();
 
-    const [data, setData] = useState({});
+    const [data, setData] = useState<Data | null>(null);
 
     const getOngoingMission = async () => {
         const res = await fetch("https://48b4-36-66-71-34.ngrok-free.app/v1/testing/list/mission"); // Replace with your API URL
