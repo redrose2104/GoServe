@@ -23,3 +23,114 @@ body {
 .title-text {
   font-size: 24px;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+}
+
+.input-container {
+  width: 90%;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 16px;
+}
+
+.agent-status {
+  background-color: #00a651;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.agent-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.agent-details {
+  flex-grow: 1;
+}
+
+.agent-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.agent-rating {
+  color: #ffb400;
+}
+
+.agent-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #eaeaea;
+}
+
+.avatar {
+  width: 100%;
+  height: auto;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 90%;
+}
+
+.button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.button.green {
+  background-color: #00a651;
+  color: #fff;
+}
+
+.button.red {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.button.contact {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow {
+  margin-left: 5px;
+}
