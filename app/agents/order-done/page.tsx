@@ -16,7 +16,7 @@ export default function OrderDonePage() {
         const res = await fetch("https://48b4-36-66-71-34.ngrok-free.app/v1/testing/list/mission"); // Replace with your API URL
         const data = await res.json(); // Parse the JSON data
 
-        setData(data.data[0])
+        setData(data.data[data?.data?.length - 1])
     }
 
     return (
